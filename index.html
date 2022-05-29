@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="https://static.wikia.nocookie.net/starwars/images/1/13/OCF_roundel.svg/revision/latest?cb=20080220195220">
+    <style>
+        #mbody{
+            background-size: 100%;
+            background-image: url(http://www.science.smith.edu/~nhowe/102/Assign/StarWars/stars.png);
+            width: 100%;
+            height: 677px;
+            border: 1px solid black;
+        }
+        #silent{
+            width: 20px;
+            height: 20px;
+            display: block;
+            /* border: 1px solid red; */
+            margin-top: 20px;
+            margin-left: 96%;
+        }
+        #silent1{
+            width: 100%;
+            cursor: pointer;
+        }
+        #star{
+            display: block;
+            width: 200px;
+            margin: auto;
+            margin-top: 140px;
+            
+        }
+        #input{
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            background-color: #2d2f30;;
+            border: 0px;
+            width: 30%;
+            /* height: 7%; */
+            padding: 20px 40px;
+            border-radius: 10px;
+            color: grey;
+        }
+        #input:hover{
+            border: 0px;
+        }
+        #container{
+            /* border:2px solid red; */
+            width: 250px;
+            height: 250px;
+            color: white;
+            overflow:scroll;
+            /* overflow: hidden; */
+            /* display: none; */
+            margin: auto;
+            width: 32%;
+            scroll-behavior: smooth;
+            scroll-snap-type: none;
+            text-align: center;
+            font-size: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="mbody">
+
+        <div id="silent">
+            <img id="silent1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDQ0OC4wNzUgNDQ4LjA3NSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0iTTM1Mi4wMjEsMTYuMDc1YzAtNi4wOC0zLjUyLTExLjg0LTguOTYtMTQuNGMtNS43Ni0yLjg4LTEyLjE2LTEuOTItMTYuOTYsMS45MmwtMTQxLjc2LDExMi45NmwxNjcuNjgsMTY3LjY4VjE2LjA3NXoiIGZpbGw9IiNmZmViMDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KPHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkPSJNNDQzLjM0OSw0MjAuNzQ3bC00MTYtNDE2Yy02LjI0LTYuMjQtMTYuMzg0LTYuMjQtMjIuNjI0LDBzLTYuMjQsMTYuMzg0LDAsMjIuNjI0bDEwMC42NzIsMTAwLjcwNGgtOS4zNzYgIGMtOS45MiwwLTE4LjU2LDQuNDgtMjQuMzIsMTEuNTJjLTQuOCw1LjQ0LTcuNjgsMTIuOC03LjY4LDIwLjQ4djEyOGMwLDE3LjYsMTQuNCwzMiwzMiwzMmg3NC4yNGwxNTUuODQsMTI0LjQ4ICBjMi44OCwyLjI0LDYuNCwzLjUyLDkuOTIsMy41MmMyLjI0LDAsNC44LTAuNjQsNy4wNC0xLjZjNS40NC0yLjU2LDguOTYtOC4zMiw4Ljk2LTE0LjR2LTU3LjM3Nmw2OC42NzIsNjguNjcyICBjMy4xMzYsMy4xMzYsNy4yMzIsNC43MDQsMTEuMzI4LDQuNzA0czguMTkyLTEuNTY4LDExLjMyOC00LjY3MkM0NDkuNTg5LDQzNy4xMzEsNDQ5LjU4OSw0MjcuMDE5LDQ0My4zNDksNDIwLjc0N3oiIGZpbGw9IiNmZmViMDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg==" alt="">
+        </div>
+
+        <img id="star" src="./Star.png" alt="">
+
+        <!-- <input id="input" oninput="getData()" type="text" placeholder="Search character"  src="" /> -->
+        <!-- <input id="input" oninput="main()" type="text" placeholder="Search character"  src="" /> -->
+
+        <input id="input" oninput="debouncing(main, 1000)" type="text" placeholder="Search character"  src="" />
+
+        <div id="container"></div>
+    </div>
+</body>
+</html>
+
+<script src="./index.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>javascript change image onclick event
+</title>
+<style type="text/css">
+	h2 {
+    text-align: center;
+    font-size: 30px;
+	}
+	img#getImage {
+    width: 300px;
+    height: auto;  
+    border: 4px solid #a1a1a1;  
+	}
+	div {
+    text-align: center;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<h2>Change image onClick event here...</h2>
+		<img src="./Sound Silent.svg" id="getImage">
+    	
+    </div>
+    <div>
+    	<input type="button" onclick="imagefun()" value="Change Image">
+    </div>
+    <script>
+        function imagefun() {
+            var Image_Id = document.getElementById('getImage');
+            if (Image_Id.src.match("./Sound Silent.svg")) {
+                Image_Id.src = "./Sound Gen.svg";
+            }
+            else {
+                Image_Id.src = "./Sound Gen.svg";
+            }
+        }        
+    </script>
+
+</body>
+</html> -->
